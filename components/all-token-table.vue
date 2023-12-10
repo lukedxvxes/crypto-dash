@@ -17,15 +17,15 @@
         <td class="font-weight-light">{{ item.name }}</td>
         <td class="font-weight-bold">{{ item.symbol }}</td>
         <td class="font-weight-light">{{ item.price }}</td>
-        <td class="font-weight-light">{{ item["Market Cap"] }}</td>
+        <td class="font-weight-light">{{ item['Market Cap'] }}</td>
         <td>
           <v-chip :color="getColor(item['Percent Change'])">
-            {{ item["Percent Change"] }}%
+            {{ item['Percent Change'] }}%
           </v-chip>
         </td>
         <td>
           <NuxtLink :to="`/currency/${item.details}`">
-            <v-btn size="small" rounded="xs" variant="tonal" class="text-black">
+            <v-btn size="small" rounded="xs" variant="tonal" class="bg-primary">
               Details
             </v-btn></NuxtLink
           >
@@ -36,7 +36,7 @@
 </template>
 
 <script setup lang="ts">
-import { useCurrencies } from "@/use/use-currencies";
+import { useCurrencies } from '@/use/use-currencies';
 
 const { currencyResponse } = await useCurrencies(100);
 
@@ -45,17 +45,17 @@ const tableArray = currencyResponse.value.map((currency) => {
     name: currency.name,
     symbol: currency.symbol,
     price: currency.price_usd,
-    "Market Cap": currency.market_cap_usd,
-    "Percent Change": currency.percent_change_24h,
+    'Market Cap': currency.market_cap_usd,
+    'Percent Change': currency.percent_change_24h,
     details: currency.id,
   };
 });
 
 const getColor = (percentChange: number) => {
   if (percentChange > 0) {
-    return "green";
+    return 'green';
   } else {
-    return "red";
+    return 'red';
   }
 };
 </script>

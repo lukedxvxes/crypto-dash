@@ -1,7 +1,7 @@
 <template>
   <v-container :fluid="fullWidth">
-    <v-row>
-      <v-col>
+    <v-row no-gutters>
+      <v-col cols="12" :lg="fullWidth ? 12 : 10" class="mx-auto pa-0">
         <slot />
       </v-col>
     </v-row>

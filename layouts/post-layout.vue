@@ -4,8 +4,10 @@
       <div class="layout-wrap">
         <Sidebar />
 
-        <div class="pa-4">
-          <slot />
+        <div>
+          <v-card>
+            <slot />
+          </v-card>
 
           <div class="footer mt-2">
             by
@@ -29,5 +31,10 @@
 .layout-wrap {
   display: grid;
   grid-template-columns: 250px 1fr;
+}
+
+.v-card:not(.layout-wrap > .v-card) {
+  margin: 1.25rem;
+  padding: 1rem 1.5rem 1rem 1rem;
 }
 </style>

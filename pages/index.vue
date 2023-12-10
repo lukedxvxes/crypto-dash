@@ -1,35 +1,30 @@
 <template>
-  <ComponentContainer :full-width="true">
-    <div>
-      <v-text-field placeholder="Search" variant="solo"></v-text-field>
+  <div class="grid">
+    <!-- <div class="row row-1">
+      <v-card>
+        <h1>Hello</h1>
+      </v-card>
+      <v-card>
+        <h1>There</h1>
+      </v-card>
+    </div> -->
+    <div class="row row-2">
+      <v-card class="px-5 py-1">
+        <all-token-table />
+      </v-card>
     </div>
-    <div class="grid">
-      <div class="row row-1">
-        <v-card>
-          <h1>Hello</h1>
-        </v-card>
-        <v-card>
-          <h1>There</h1>
-        </v-card>
-      </div>
-      <div class="row row-2">
-        <v-card class="px-5 py-1">
-          <AllTokenTable />
-        </v-card>
-      </div>
-    </div>
-  </ComponentContainer>
+  </div>
 </template>
 
 <script setup lang="ts">
 definePageMeta({
-  layout: "default",
+  layout: 'default',
 });
 </script>
 
 <style scoped>
 .grid {
-  display: grid;
+  /* display: grid;
   grid-template-rows: 300px 1fr;
   .row-1 {
     display: grid;
@@ -42,6 +37,6 @@ definePageMeta({
     height: 100%;
     flex: 1;
     padding: 1rem;
-  }
+  } */
 }
 </style>
